@@ -26,7 +26,7 @@ export const RegisterForm = ({user} : {user: User}) => {
 
   const form = useForm<z.infer<typeof PatientFormValidation>>({
     resolver: zodResolver(PatientFormValidation),
-    //@ts-ignore
+    
     defaultValues: {
       ...PatientFormDefaultValues,
       name: "",
