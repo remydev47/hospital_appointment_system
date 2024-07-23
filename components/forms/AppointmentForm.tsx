@@ -1,5 +1,4 @@
-'use client'
-
+"use client";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -73,7 +72,7 @@ export const AppointmentForm = ({
         const appointment = await createAppointment(appointmentData);
         if(appointment) {
             form.reset();
-            router.push(`/patients/${userId}/new-appointment/success?appointmentId=${appointment.id}`);
+            router.push(`/patients/${userId}/new-appointment/success?appointmentId=${appointment.$id}`);
         }
       }
     } catch (error) {
@@ -82,7 +81,7 @@ export const AppointmentForm = ({
       setIsLoading(false);
     }
   }
-   
+   console.log("Response")
     let buttonLabel;
     switch (type) {
       case "cancel":
